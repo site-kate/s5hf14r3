@@ -12,10 +12,9 @@
 
 cd "$GITHUB_ACTION_PATH"
 
-cloudflared_url=https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-darwin-amd64.tgz
+cloudflared_url=https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 echo "Downloading \`cloudflared\` from <$cloudflared_url>..."
-curl --location --silent --output cloudflared-darwin-amd64.tgz "$cloudflared_url"
-tar xf cloudflared-darwin-amd64.tgz
+curl --location --silent --output cloudflared "$cloudflared_url"
 chmod +x cloudflared
 
 curl_command="curl -s"
