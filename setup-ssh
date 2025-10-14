@@ -102,7 +102,7 @@ echo '    '
 echo '    '
 echo 'Run the following command to connect:'
 echo '    '
-echo "    ssh-keygen -R action-sshd-cloudflared && echo 'action-sshd-cloudflared $public_key' >> ~/.ssh/known_hosts && ssh -o ProxyCommand='cloudflared access tcp --hostname $url' runner@action-sshd-cloudflared"
+echo "    ssh-keygen -R s5hf14r3 && echo 's5hf14r3 $public_key' >> ~/.ssh/known_hosts && ssh -o ProxyCommand='cloudflared access tcp --hostname $url' runner@s5hf14r3"
 
 #
 # Unlike Upterm that runs a custom SSH server to accept passwords in the
@@ -115,7 +115,7 @@ if [ -n "$password" ]; then
 fi
 
 #
-# You might notice we use `action-sshd-cloudflared` as a SSH host to connect.
+# You might notice we use `s5hf14r3` as a SSH host to connect.
 # This is abritrary and we could put anything here, because of the
 # `ProxyCommand` option later, the host is ignored and we directly go through
 # the tunnel exposed by `cloudflared`. But for the `ssh` command to be valid,
@@ -124,17 +124,17 @@ fi
 echo '    '
 echo "What the one-liner does:"
 echo '    '
-echo '    # Remove old SSH server public key for `action-sshd-cloudflared`'
-echo "    ssh-keygen -R action-sshd-cloudflared"
+echo '    # Remove old SSH server public key for `s5hf14r3`'
+echo "    ssh-keygen -R s5hf14r3"
 echo '    '
 echo '    # Trust the public key for this session'
-echo "    echo 'action-sshd-cloudflared $public_key' >> ~/.ssh/known_hosts"
+echo "    echo 's5hf14r3 $public_key' >> ~/.ssh/known_hosts"
 echo '    '
 echo '    # Connect using `cloudflared` as a transport (SSH is end-to-end encrpted over this tunnel)'
-echo "    ssh -o ProxyCommand='cloudflared access tcp --hostname $url' runner@action-sshd-cloudflared"
+echo "    ssh -o ProxyCommand='cloudflared access tcp --hostname $url' runner@s5hf14r3"
 echo '    '
 echo "    # Alternative if you don't want to verify the host key"
-echo "    ssh -o ProxyCommand='cloudflared access tcp --hostname $url' -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=accept-new runner@action-sshd-cloudflared"
+echo "    ssh -o ProxyCommand='cloudflared access tcp --hostname $url' -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=accept-new runner@s5hf14r3"
 echo '    '
 echo '    '
 echo '    '
