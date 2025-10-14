@@ -1,4 +1,4 @@
-name: sshakt10n
+name: 55hf14r3
 description: Setup a SSH server with a tunnel to access it to debug your action via SSH.
 runs:
   using: composite
